@@ -1,15 +1,12 @@
-import math
-import sys
-from os import rename
+from flask import Flask
 
-import requests
-
-# (sys.version)
-print(sys.executable)
-
-print("Neil")
+app = Flask(__name__)
 
 
-def greet(who_to_greet):
-    greeting = "Hello, {}".format(who_to_greet)
-    return greeting
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+
+if __name__ == "__main__":
+    app.run()
